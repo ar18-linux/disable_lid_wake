@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+# ar18
 
 # Script template version 2021-06-12.03
 # Make sure some modification to LD_PRELOAD will not alter the result or outcome in any way
@@ -37,12 +37,6 @@ if [ ! -v ar18_helper_functions ]; then rm -rf "/tmp/helper_functions_$(whoami)"
 obtain_sudo_password
 
 ar18_install "${install_dir}" "${module_name}" "${script_dir}"
-
-chmod 644 "${install_dir}/${module_name}/${module_name}.service"
-rm -rf "/etc/systemd/system/${module_name}.service"
-ln -s "${install_dir}/${module_name}/${module_name}.service" "/etc/systemd/system/${module_name}.service"
-systemctl enable "${module_name}.service"
-systemctl start "${module_name}.service"
 
 ##################################SCRIPT_END###################################
 # Restore old shell values
