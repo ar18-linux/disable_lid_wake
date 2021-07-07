@@ -2,7 +2,7 @@
 Description=Disable lid wake
  
 [Service]
-ExecStart=/opt/ar18/disable_lid_wake/disable_lid_wake.sh
+ExecStart={{INSTALL_DIR}}/disable_lid_wake/disable_lid_wake.sh
  
 [Install]
 WantedBy=multi-user.target
